@@ -49,15 +49,15 @@ const createTweetElement = (tweetObj) => {
   const $tweet = $(`<article  class="tweetContainer">`).addClass('tweet')
   let html = `<header class="header2">
     <div class="topleft">
-      <img class="smallAvatar" src='${tweetObj.user.avatars}'> 
+      <img class="smallAvatar" src=${tweetObj.user.avatars}> 
     </div>
-    <div class="tweetName">'${tweetObj.user.name}'</div>
-    <div class="handle">'${tweetObj.user.handle}'</div>
+    <div class="tweetName">${tweetObj.user.name}</div>
+    <div class="handle">${tweetObj.user.handle}</div>
   </header>
   <br>  
-  <div class='tweetContent'>'${tweetObj.content.text}'</div>
+  <div class='tweetContent'>${tweetObj.content.text}</div>
   <footer id="footer" class="footer">
-    <div class="posted">'${tweetObj.created_at}'</div>
+    <div class="posted">${tweetObj.created_at}</div>
     <span class="icons">
       <i class="icon ion-md-share"></i>
       <i class="icon ion-md-flag"></i>
@@ -74,34 +74,22 @@ return tweetElement
 renderTweets(data)
 
 
-// const handleSubmit = event => {
-//   const $button = $('#submit')
-  
-//   console.log(event)
-
-//   $button.submit(function(event){
-//     alert("you pressed TWEET");
-//     event.preventDefault()
-    
-//     $.ajax({
-//       url: "/tweets",
-//       method: "POST",
-//       // data: use serialiize
-     
-//     })
-//     .then(res => console.log('tweet sent properly', res))
-//     .catch(err => console.log(err))
-//   })
-  
-//     event.preventDefault();
-
-//   }
-
-//   handleSubmit(submit)
  const handleSubmit = (event) => {
-  console.log(event.target)
+  
   event.preventDefault()
-  console.log($(event.target).serialize())
+  
+  let textLength = $(event.target).serialize().length - 5
+  console.log(textLength)
+  
+  if(textLength > 140) {
+    alert("Your tweet is too long")
+    return
+  }
+
+  if(textLength === 0) {
+    alert("Please write something")
+    return
+  }
 
   $.ajax({
           url: "/tweets",
@@ -116,6 +104,21 @@ renderTweets(data)
 
 
 $('.form').on('submit', handleSubmit)  
+
+
+const loadTweets = function() {
+
+  $.ajax({
+    url: "/tweets",
+    method: "GET",    
+   
+  })
+  .then(res => renderTweets(res))
+  .catch(err => console.log(err))
+  
+}
+
+loadTweets()
 
 
 })
