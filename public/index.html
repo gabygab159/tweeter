@@ -48,33 +48,12 @@
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" class="textArea" placeholder="What are you humming about?" ></textarea>
           <div class="btmbar">
-            <button type="submit" class="submit">Tweet</button>
+            <button type="submit" class="submit" id="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <section id="tweets">
-        <article  class="tweetContainer">
-          <header class="header2">
-            <div class="topleft">
-              <img class="smallAvatar" src="/images/profile-hex.png"> 
-            </div>
-            <div class="tweetName">Gaby</div>
-            <div class="handle">@gabygab</div>
-          </header>
-          <br>
-          
-          <div class='tweetContent'>This is where the tweet would go</div>
-          <footer id="footer" class="footer">
-            <div class="posted">10 days ago</div>
-            <span class="icons">
-              <i class="icon ion-md-share"></i>
-              <i class="icon ion-md-flag"></i>
-              <i class="icon ion-md-heart"></i>
-            </span>           
-          </footer>
-        </article>
-      </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>
