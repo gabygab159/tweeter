@@ -1,0 +1,64 @@
+.tweetContainer {  
+  margin-top: 40px;
+  height: 200px;
+  border: 3px solid;
+  justify-content: space-around;
+}
+
+.tweetContainer:hover {
+  box-shadow:10px 10px grey; 
+}
+
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.topleft {
+  width: 60px;
+}
+.smallAvatar {
+  height: 120%;
+  width: auto;
+  margin-left: 10px;
+}
+
+.tweetName {
+  flex-grow: 8;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+.handle {
+  margin-right: 15px;
+}
+
+.tweetContent {
+  display: flex;
+  height: 60px; 
+  margin-left: 40px;
+}
+
+#footer {
+  display: flex;
+  align-items: flex-end;
+  height: 35px;
+  border-top: solid black 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+
+.posted {
+  font-size: 18px;
+  margin-left: 35px;
+}
+
+i {
+  font-size: 18px;
+}
+
