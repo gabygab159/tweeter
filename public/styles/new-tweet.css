@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f1ec;
+  
+}
+
+.textArea {
+  border: none;
+  background-color: #f4f1ec;
+  border-bottom: 2px solid;
+  outline: none;
+  resize: none;
+  padding-bottom: 10px;
+}
+
+.submit {
+  font-family: Bungee, sans-serif;
+  background-color: #4056A1;
+  color: #f4f1ec;
+  font-size: smaller;
+}
+
+
+.btmbar {
+  margin-top: 10px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+.counter {
+  font-family: Bungee, sans-serif;
+  color: black;
+
+
+}
