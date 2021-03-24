@@ -71,7 +71,51 @@ let tweetElement = $tweet.append(html)
 return tweetElement
 }
 
-
 renderTweets(data)
+
+
+// const handleSubmit = event => {
+//   const $button = $('#submit')
+  
+//   console.log(event)
+
+//   $button.submit(function(event){
+//     alert("you pressed TWEET");
+//     event.preventDefault()
+    
+//     $.ajax({
+//       url: "/tweets",
+//       method: "POST",
+//       // data: use serialiize
+     
+//     })
+//     .then(res => console.log('tweet sent properly', res))
+//     .catch(err => console.log(err))
+//   })
+  
+//     event.preventDefault();
+
+//   }
+
+//   handleSubmit(submit)
+ const handleSubmit = (event) => {
+  console.log(event.target)
+  event.preventDefault()
+  console.log($(event.target).serialize())
+
+  $.ajax({
+          url: "/tweets",
+          method: "POST",
+          data: $(event.target).serialize()
+         
+        })
+        .then(res => console.log('tweet sent properly', res))
+        .catch(err => console.log(err))
+      
+ }
+
+
+$('.form').on('submit', handleSubmit)  
+
 
 })
