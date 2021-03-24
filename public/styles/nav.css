@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4056A1;
+  font-family: Bungee, sans-serif;
+  color:#FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  font-size: 36px;
+  padding: 1.5em; 
+}
+
+.newTweet {
+
+  font-size: 24px;
+  padding: 1.5em;
+
+}
