@@ -1,16 +1,20 @@
 @media only screen and (max-width: 420px){
 
   body {
+
     font-size: 16px;
    
   }
 
   .logo {
+
     font-size: 24px;
     padding: 1.25em; 
+
   }
   
   .newTweet {
+
     display: flex;
     font-size: 18px;
     margin-left: 55px;
@@ -19,60 +23,75 @@
   }
 
   .posted {    
+
     font-size: 13px;
+
   }
 
   .error-message {
+
     margin-top: 15px;
+
   }
 }
-
 
 
 @media only screen and (min-width: 1024px) {
 
 .header {
+
   width: 45% ;
   margin-left: 60px;
   height: 45%;
   margin-top: 275px;
+
 }
 
 body {
+
   flex-direction: row;
+
 }
   
 .form {
+
   margin-top: 175px;
   width: 75%;
   justify-content: center;
   margin-left: 130px;
+
 }
 
 .tweetContainer {
+
   width: 75%;
   margin-left: 130px;
+
 }
 
 .new-tweet {
+
   margin-top: 100px;
   height: fit-content; 
-  /* height: 100px; */
-
+  
 }
 
 .error-message {
+
   width: 75%;
   justify-content: center;
   margin-left: 125px;
   margin-top: 40px;
+
 }
 
 .error-message2 {
+
   width: 75%;
   justify-content: center;
   margin-top: 40px;
   margin-left: 125px;
+  
 }
 
 }

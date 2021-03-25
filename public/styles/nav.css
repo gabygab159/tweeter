@@ -17,7 +17,8 @@
 }
 
 .newTweet {
-
+  color:#FFFFFF;
+  text-decoration: underline;
   font-size: 24px;
   padding: 1.5em;
 

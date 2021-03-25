@@ -1,0 +1,23 @@
+.error-message {
+
+  display: flex;
+  justify-content: center;
+  color: red;
+  background-color: #fce4e4;
+  border: 2px solid #fcc2c3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.error-message2 {
+
+  display: flex;
+  justify-content: center;
+  color: red;
+  background-color: #fce4e4;
+  border: 2px solid #fcc2c3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
