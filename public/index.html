@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
     <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/mediaQueries.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
@@ -30,7 +31,7 @@
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span class="logo">tweeter</span>
-      <div class="newTweet">Write a new tweet</div>
+      <a href= #top class="newTweet";>Write a new tweet</a>
     </nav>
 
   <header class="header">
@@ -44,7 +45,7 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
+      <section class="new-tweet">
         <div class="error-message">You've surpassed the permitted number of characters. Please be succinct like this error message.</div>
         <div class="error-message2">You haven't tweeted your thoughts yet.</div>
         <form method="POST" action="/tweets" class="form">
