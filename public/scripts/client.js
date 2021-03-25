@@ -4,16 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-////// Prevents XSS
-
-const escape =  function(str) {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-
-
-
 const data = [
   {
     user: {
@@ -41,6 +31,18 @@ const data = [
 ];
 
 $(document).ready(() => {
+
+ 
+  // Prevents XSS
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Renders tweets
+
   const renderTweets = (tweets) => {
     let tweetContainer = $("#tweets-container");
 
@@ -50,7 +52,10 @@ $(document).ready(() => {
     });
   };
 
-  const createTweetElement = (tweetObj) => {
+  // Creates new tweets
+
+  const createTweetElement = (tweetObj) => {    
+
     const $tweet = $(`<article  class="tweetContainer">`).addClass("tweet");
     let html = `<header class="header2">
     <div class="topleft">
@@ -62,7 +67,7 @@ $(document).ready(() => {
   <br>  
   <div class='tweetContent'>${escape(tweetObj.content.text)}</div>
   <footer id="footer" class="footer">
-    <div class="posted">${tweetObj.created_at}</div>
+    <div class="posted">${new Date(tweetObj.created_at).toLocaleString()}</div>
     <span class="icons">
       <i class="icon ion-md-share"></i>
       <i class="icon ion-md-flag"></i>
@@ -74,11 +79,14 @@ $(document).ready(() => {
     let tweetElement = $tweet.append(html);
 
     return tweetElement;
+    
   };
 
   renderTweets(data);
 
-  const loadTweets = function () {
+  // Loads tweets and error messages
+
+  const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
@@ -89,19 +97,23 @@ $(document).ready(() => {
 
   loadTweets();
 
+  $(".error-message").hide();
+  $(".error-message2").hide();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     let textLength = $(event.target).serialize().length - 5;
-    console.log(textLength);
-
+    
     if (textLength > 140) {
-      alert("Your tweet is too long");
+      $(".error-message2").hide();
+      $(".error-message").slideDown();
       return;
     }
 
     if (textLength === 0) {
-      alert("Please write something");
+      $(".error-message1").hide();
+      $(".error-message2").slideDown();
       return;
     }
 
@@ -111,6 +123,9 @@ $(document).ready(() => {
       data: $(event.target).serialize(),
     })
       .then((res) => loadTweets())
+      .then($(".error-message").slideUp())
+      .then($(".error-message2").slideUp())
+      .then($(".textArea").val(""))
       .catch((err) => console.log(err));
   };
 
