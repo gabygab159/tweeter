@@ -14,6 +14,18 @@
 
 }
 
+.tweetContainer:hover .handle  {
+
+  visibility: visible;
+
+}
+
+.tweetContainer:hover .icons  {
+
+  visibility: visible;
+
+}
+
 .header2 {
 
   display: flex;
@@ -46,14 +58,22 @@
 }
 
 .handle {
-
+  visibility: hidden;
   margin-right: 15px;
 
 }
 
+
+.handle:hover {
+  visibility: visible;
+}
+
+
+
 .tweetContent {
 
   display: flex;  
+  flex-wrap: wrap;
   height: 60px; 
   margin-left: 40px;
 
@@ -81,9 +101,19 @@
 }
 
 i {
-
+ 
   font-size: 18px;
 
+}
+
+.icons  {
+  visibility: hidden;
+}
+
+
+
+.icons:hover {
+  visibility: visible;
 }
 
 .form {
