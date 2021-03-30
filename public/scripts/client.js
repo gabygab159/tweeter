@@ -100,6 +100,8 @@ $(document).ready(() => {
   $(".error-message").hide();
   $(".error-message2").hide();
 
+  // Checks tweet length and handles error messages and submit
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -126,6 +128,7 @@ $(document).ready(() => {
       .then($(".error-message").slideUp())
       .then($(".error-message2").slideUp())
       .then($(".textArea").val(""))
+      .then($(".counter").val(140))
       .catch((err) => console.log(err));
   };
 
