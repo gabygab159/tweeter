@@ -63,18 +63,18 @@ $(document).ready(() => {
     </div>
     <div class="tweetName">${tweetObj.user.name}</div>
     <div class="handle">${tweetObj.user.handle}</div>
-  </header>
-  <br>  
-  <div class='tweetContent'>${escape(tweetObj.content.text)}</div>
-  <footer id="footer" class="footer">
-    <div class="posted">${new Date(tweetObj.created_at).toLocaleString()}</div>
-    <span class="icons">
-      <i class="icon ion-md-share"></i>
-      <i class="icon ion-md-flag"></i>
-      <i class="icon ion-md-heart"></i>
-    </span>           
-  </footer>
-</article>`;
+    </header>
+      <br>  
+      <div class='tweetContent'>${escape(tweetObj.content.text)}</div>
+        <footer id="footer" class="footer">
+          <div class="posted">${new Date(tweetObj.created_at).toLocaleString()}</div>
+            <span class="icons">
+              <i class="icon ion-md-share"></i>
+              <i class="icon ion-md-flag"></i>
+              <i class="icon ion-md-heart"></i>
+            </span>           
+        </footer>
+    </article>`;
 
     let tweetElement = $tweet.append(html);
 
@@ -105,20 +105,21 @@ $(document).ready(() => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    let textLength = $(event.target).serialize().length - 5;
+    let textLength = $(".textArea").val().length ;
     
     if (textLength > 140) {
       $(".error-message2").hide();
       $(".error-message").slideDown();
       return;
     }
-
+    
     if (textLength === 0) {
       $(".error-message1").hide();
       $(".error-message2").slideDown();
       return;
     }
-
+    console.log(textLength)
+    
     $.ajax({
       url: "/tweets",
       method: "POST",
