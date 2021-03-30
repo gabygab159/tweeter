@@ -5,10 +5,20 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -20,37 +30,43 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
+    <script src="/scripts/focusClick.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <!--Disable Viewport Zooming-->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span class="logo">tweeter</span>
-      <a href= #top class="newTweet";>Write a new tweet</a>
+      <a href="#top" class="newTweet" id="tweet-focus" >Write a new tweet</a>
     </nav>
-
-  <header class="header">
-    <div class="avatar">
-      <img src="/images/profile-hex.png"> 
-    </div>
-    <br>
-    <div class="name">
-      <h2>Gaby</h2>
-    </div>
-  </header>
+    <header class="header">
+      <div class="avatar">
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br/>
+      <div class="name">
+        <h2>Gaby</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error-message">You've surpassed the permitted number of characters. Please be succinct like this error message.</div>
+        <div class="error-message">
+          You've surpassed the permitted number of characters. Please be
+          succinct like this error message.
+        </div>
         <div class="error-message2">You haven't tweeted your thoughts yet.</div>
-        <form method="POST" action="/tweets" class="form">
+        <form method="POST" action="/tweets" class="form" >
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" class="textArea" placeholder="What are you humming about?" ></textarea>
+          <textarea 
+           type="text" name="text" id="tweet-text" class="textArea" placeholder="What are you humming about?" autofocus ></textarea>
           <div class="btmbar">
             <button type="submit" class="submit" id="submit">Tweet</button>
             <output name="counter" class="counter" id="counter" for="tweet-text">140</output>
