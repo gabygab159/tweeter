@@ -73,9 +73,9 @@
 .tweetContent {
 
   display: flex;  
-  flex-wrap: wrap;
   height: 60px; 
   margin-left: 40px;
+  overflow: auto;
 
 }
 
@@ -112,9 +112,6 @@ i {
 
 
 
-.icons:hover {
-  visibility: visible;
-}
 
 .form {
 
