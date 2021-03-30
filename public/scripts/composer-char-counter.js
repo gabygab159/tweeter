@@ -1,3 +1,5 @@
+// Counts characters in text area
+
 $(document).ready(function () {
   document
     .querySelector(".textArea")
